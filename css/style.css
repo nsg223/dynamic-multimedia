@@ -1,0 +1,16 @@
+footer {
+	background-color: #fafafa;
+	width:100%;
+	min-height:50px;
+	padding-top:10px;
+	position:fixed;
+	bottom:0;
+}
+
+/*footer p {
+	font-color:;
+}*/
+
+body {
+	padding-bottom:100px;
+}
