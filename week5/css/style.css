@@ -14,3 +14,7 @@ footer {
 body {
 	padding-bottom:100px;
 }
+
+.alt-bg {
+	background-color: #b7b2b2 !important; 
+}

@@ -37,7 +37,7 @@
       <!--   <li class=""><a href="#">Link</a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Login</a></li>
+        <li><a href="#" id="login-button">Login</a></li>
       </ul>
     </div>
   </div>
@@ -46,82 +46,34 @@
 
     <div class="container">
 
-    <div class="row">
+    <div class="row search-form">
 
       <div class="col-md-offset-8 col-md-4">
 
-        <div class="form-group">
-          <label class="control-label">Search</label>
-          <div class="input-group">
-            <input type="text" class="form-control">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button">Search</button>
-            </span>
+        <form id="form-submit">
+          <div class="form-group">
+            <label class="control-label">Search</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="search-form">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="submit" id="search-button">Search</button>
+              </span>
+            </div>
           </div>
-        </div>
+        </form>
 
       </div>
     
     </div>
 
+    <div id="welcome">
 
-    <div class="row">
-
-
-        <div class="col-md-4">
-          <div class="well">
-            <a href="photos/DSC01049.JPG" target="_blank">
-              <img src="photos/DSC01049.JPG" alt="lovely photo" class="center-block img-responsive">
-            </a>
-            <p class="text-center"> City View </p>
-
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="well">
-
-            <img src="photos/DSC01066.JPG" alt="lovely photo" class="center-block img-responsive">
-            <p class="text-center"> Ferris Wheel </p>
-
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="well">
-
-            <img src="photos/DSC02511.jpg" alt="lovely photo" class="center-block img-responsive">
-            <p class="text-center"> A building in the forbidden city with extra long text.</p>
-
-          </div>
-        </div>
-
+      <h1 class="text-center" style="padding-top:100px; padding-bottom:100px;">Welcome to the Site, Click to Load...</h1>
 
     </div>
 
-    <div class="row">
+    <div id="content-section">
 
-
-        <div class="col-md-4">
-          <div class="well">
-
-            <img src="photos/DSC03810.jpg" alt="lovely photo" class="center-block img-responsive">
-            <p class="text-center"> City from Mt Gravatt lookout </p>
-
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="well">
-
-            <img src="photos/DSC05750.jpg" alt="lovely photo" class="center-block img-responsive">
-            <p class="text-center"> Sunrise </p>
-
-          </div>
-        </div>
-
-
-    </div>
 
 
     </div> <!-- Container end -->
@@ -139,5 +91,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
