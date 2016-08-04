@@ -66,7 +66,7 @@ $(document).ready(function() {
     });
 
     function splash() {
-        $("#content-section").html(' <button id="photo-load" class="btn btn-primary">Load!</button> ');
+        $("#content-section").html('<p class="text-center"> <button id="photo-load" class="btn btn-primary">Load!</button> </p>');
         $(".search-form").hide();        
     }
 
