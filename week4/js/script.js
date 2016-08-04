@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
-    $.getJSON('js/items.json', function(data) {
-            items = data;
-    });
+    items = [];
 
-    console.log(JSON.stringify(items));
+    $.getJSON('data/items.json', function(data) {
+        items = data;
+    });
 
     $("#form-submit").submit(function (e){
         e.preventDefault();
@@ -46,19 +46,23 @@ $(document).ready(function() {
             content +=  '</div>' ;
         }
 
-        document.getElementById("content-section").innerHTML = content;
+        $("#content-section").html(content);
 
     }
 
     $('body').on('click', '#photo-load', function() {
+        $("#welcome").hide();
         render(items);
         $(".search-form").show();
-        $( "#content-section" ).animate({ "left": "+=50px" }, "slow" );
+        $( "#content-section" ).hide();
+        $( "#content-section" ).fadeIn("slow");
+        
     });
 
     $('body').on('click', '#back', function() {
         splash();
         $(".search-form").hide();
+        $("#welcome").show();
     });
 
     function splash() {
