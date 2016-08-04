@@ -1,22 +1,16 @@
-items = [
-                {'caption':'City View', 'image': 'photos/DSC01049.JPG'},
-                {'caption':'Ferris Wheel', 'image': 'photos/DSC01066.JPG'},
-                {'caption':'A building in the forbidden city with extra long text', 'image': 'photos/DSC02511.jpg'},
-                {'caption':'City from Mt Gravatt lookout', 'image': 'photos/DSC03810.jpg'},
-                {'caption':'Sunrise', 'image': 'photos/DSC05750.jpg'},
-            ]
-
-
-
 $(document).ready(function() {
+
+    $.getJSON('js/items.json', function(data) {
+            items = data;
+    });
+
+    console.log(JSON.stringify(items));
 
     $("#form-submit").submit(function (e){
         e.preventDefault();
         var query = $("#search-form").val();
         query = query.toLowerCase();
         query = query.trim();
-        // query = query.split('');
-
         results = [];
 
         for (i = 0; i < items.length; i++) {
@@ -32,14 +26,14 @@ $(document).ready(function() {
         } else if (query == '') {
             render(items);
         } else {
-            document.getElementById("content-section").innerHTML = 'No Results Found';
+            $("#content-section").text('No Results Found');
         }
 
     });
 
-
     function render(render_items) {
-        content = "";
+
+        content = '<div class="row"> <button id="back" class="btn btn-primary">Back...</button> </div>';
 
         for (var i = 0; i < render_items.length; i++) {
             content += '<div class="col-md-4">';
@@ -47,18 +41,35 @@ $(document).ready(function() {
             content += '<a href="' + render_items[i].image + '" target="_blank">';
             content += '<img src="' + render_items[i].image + '" alt="lovely photo" class="center-block img-responsive">';
             content += '</a>';
-            content +=  '  <p class="text-center"> ' + render_items[i].caption + ' </p>';
+            content +=  '<p class="text-center"> ' + render_items[i].caption + ' </p>';
             content += '</div>';
             content +=  '</div>' ;
         }
 
         document.getElementById("content-section").innerHTML = content;
-    }    
 
-    render(items);
+    }
+
+    $('body').on('click', '#photo-load', function() {
+        render(items);
+        $(".search-form").show();
+        $( "#content-section" ).animate({ "left": "+=50px" }, "slow" );
+    });
+
+    $('body').on('click', '#back', function() {
+        splash();
+        $(".search-form").hide();
+    });
+
+    function splash() {
+        $("#content-section").html(' <button id="photo-load" class="btn btn-primary">Load!</button> ');
+        $(".search-form").hide();        
+    }
+
+    splash();
 
 });
 
-document.getElementById("login-button").addEventListener("click", function(event){
+$("#login-button").click(function(){
     alert("This feature is not available yet");
 });
