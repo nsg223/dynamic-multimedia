@@ -58,7 +58,6 @@ body {
     left: -100px;
 	top:150px;
     transition: 2s;
-    z-index:9999999;
 }
 
 .side-menu:hover {
