@@ -28,7 +28,7 @@ app.controller('photoCtrl', function($scope, $http) {
 
     get_items('https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=2564c5860d587b11245b33f7e4b25d6a&per_page=20&format=json&nojsoncallback=1',
     function() {
-        $scope.apply();
+        $scope.$apply();
     });
 
     /**
@@ -43,7 +43,7 @@ app.controller('photoCtrl', function($scope, $http) {
         olditems = $scope.items;
         
         get_items('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=a4dc801fcd306e0c7494ffee49b598ce&text=' + query + '&per_page=20&format=json&nojsoncallback=1', function() {
-            $scope.apply();
+            $scope.$apply();
         });
 
     });
