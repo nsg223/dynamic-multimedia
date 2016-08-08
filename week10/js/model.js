@@ -10,3 +10,7 @@ app.config(function($routeProvider) {
     controller: 'photoCtrl'
   })
 });
+
+$("#login-button").click(function(){
+    alert("This feature is not available yet");
+});
