@@ -1,4 +1,4 @@
-app.controller('myCtrl', function($scope, $http) {
+app.controller('photoCtrl', function($scope, $http) {
     $scope.items = [];
 
     /**
