@@ -4,7 +4,7 @@ app.controller('photoCtrl', function($scope, $http) {
     /**
      * Gets the items from the Flickr API and Sets them in the scope.
      */
-    function get_items(request_url, callback) {
+    function get_items(request_url) {
         $http.get(request_url).then(function(response) {
             data = response.data.photos.photo;
             $scope.items = [];
@@ -19,9 +19,7 @@ app.controller('photoCtrl', function($scope, $http) {
                 }
                 $scope.items.push(temp);
             }
-            if (callback) {
-                callback();
-            }
+
     });
 
     }
@@ -39,7 +37,7 @@ app.controller('photoCtrl', function($scope, $http) {
 
         olditems = $scope.items;
         
-        get_items('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=a4dc801fcd306e0c7494ffee49b598ce&text=' + query + '&per_page=20&format=json&nojsoncallback=1');
+        get_items('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=2564c5860d587b11245b33f7e4b25d6a&text=' + query + '&per_page=20&format=json&nojsoncallback=1');
 
     });
 
