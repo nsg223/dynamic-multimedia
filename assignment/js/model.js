@@ -65,7 +65,7 @@ getPageInfo = function() {
         function (response) {
         if (response && !response.error) {
             $("#page-title").text(response.name);
-            $("#page-title").text(response.description);
+            $("#page-description").text(response.description);
         }
         }
     );
