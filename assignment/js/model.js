@@ -53,10 +53,11 @@ checkLoginState = function() {
                 FB.api(
                     "/815157038515764",
                     function (response) {
-                    console.log(response);
                     if (response && !response.error) {
                         /* handle the result */
                         console.log(response);
+                        $("#page-title").text(response.name);
+                        $("#page-title").text(response.description);
                     }
                     }
                 );
