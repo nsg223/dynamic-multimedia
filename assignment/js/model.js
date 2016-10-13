@@ -21,6 +21,8 @@ app.config(function($routeProvider) {
   })
 });
 
+userId = undefined; 
+
 /**
  * Prompts a user to login 
  */
@@ -52,12 +54,15 @@ checkLoginState = function() {
         FB.getLoginStatus(function(response) {
             console.log(response);
             if (response.status == "connected") {
-                $(document).trigger("fblogin");
+                
                 $("#login-button").hide();
                 $("#logout-button").show();
 
                 getPageInfo();
-                getUserInfo();
+                getUserInfo(function() {
+                    $(document).trigger("fblogin");
+                });
+                
 
             } else {
                 $("#login-button").show();
@@ -99,13 +104,15 @@ getPageInfo = function() {
  * Display their name in the menu and welcome text
  * usage: getUserInfo();
  */
-getUserInfo = function() {
+getUserInfo = function(callback) {
     FB.api('/me', function(response) {
         console.log(response);
         $("#name-menu").html('Hi, ' + response.name);
         $("#welcome-text").text('Welcome, ' + response.name);
         $("#not-logged-in").hide();
         $("#logged-in").show();
+        userId = response.id;
+        callback();
     });
 }
 
