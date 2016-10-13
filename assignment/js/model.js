@@ -44,7 +44,7 @@ checkLoginState = function() {
                 FB.api('/me', function(response) {
                     console.log(response);
                     $("#name-menu").html('Hi, ' + response.name);
-                    $("#welcome-text").html('Welcome, ' + response.name);
+                    $("#welcome-text").text('Welcome, ' + response.name);
                     $("#not-logged-in").hide();
                     $("#logged-in").show();
                 });
