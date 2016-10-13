@@ -30,7 +30,7 @@ $("#login-button").click(function() {
         checkLoginState();
     });
 
-});
+}, { scope:'publish_actions' });
 
 /**
  * Logs out a user
