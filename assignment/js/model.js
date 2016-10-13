@@ -37,7 +37,7 @@ checkLoginState = function() {
 
                 FB.api('/me', function(response) {
                     console.log(response);
-                    $("#name-menu").text('Hi, ' + response.name);
+                    $("#name-menu").html('Hi, ' + response.name);
                 });
 
             } else {
