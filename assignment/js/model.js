@@ -30,13 +30,13 @@ $(document).on('fbload', function() {
     function checkLoginState() {
         FB.getLoginStatus(function(response) {
             console.log(response);
-            // if (response.authResponse.status === "connected") {
-            //     $("#login-button").hide();
-            //     $("#logout-button").show();
-            // } else {
-            //     $("#login-button").show();
-            //     $("#logout-button").hide();
-            // }
+            if (response.status === "connected") {
+                $("#login-button").hide();
+                $("#logout-button").show();
+            } else {
+                $("#login-button").show();
+                $("#logout-button").hide();
+            }
         });
     }
 
