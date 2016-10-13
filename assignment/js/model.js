@@ -152,7 +152,7 @@ getAlbums = function(callback) {
 getPhotos = function(albumID, callback) {
 
     FB.api(
-        "/" + albumID + "/photos?fields=picture,name,id,likes",
+        "/" + albumID + "/photos?fields=picture,name,id,likes,images",
         function (response) {
 
             if (callback != undefined)

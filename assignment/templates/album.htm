@@ -4,9 +4,11 @@
     <hr>
 
 
-    <div class="photo" ng-repeat="photo in photos">
+    <div class="col-md-3" ng-repeat="photo in photos">
 
-        <img src="{{ photo.picture }}" class="img-responsive">
+        <a href="{{ photo.images[0].source }}" rel="lightbox">
+            <img src="{{ photo.images[3].source }}" class="img-responsive" >
+        </a>
 
         <h3>{{photo.name}}</h3>
         <p>{{photo.likes.data.length}} Likes</p>
