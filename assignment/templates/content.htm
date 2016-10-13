@@ -7,4 +7,14 @@
 
 <p id="page-description">&nbsp; </p> 
 
+<div class="album" ng-repeat="album in albums">
+
+{{album.name}}
+
+<img src="{{album.picture}}" class="img-responsive">
+
+{{album.count}} Photos
+
+</div>
+
 </div>

@@ -1,12 +1,12 @@
 app.controller('contentCtrl', function($scope, $http) {
     
 $(document).on('fblogin', function() {
+
+    $scope.albums = [];
  
-    getPhotos(function(aust) {
-
-        $scope.photos = aust;
+    getPhotos(function(data) {
+        $scope.albums = data;
         console.log("Photos Set in Scope!");
-
     });
 
 });
