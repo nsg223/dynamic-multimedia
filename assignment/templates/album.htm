@@ -3,7 +3,7 @@
     <h1 id="album-title"> Album </h1>
     <hr>
 
-
+    <div class="row">
     <div class="col-md-3" ng-repeat="photo in photos">
 
         <a href="{{ photo.images[0].source }}" rel="lightbox" data-lightbox="images">
@@ -11,8 +11,9 @@
         </a>
 
         <h3>{{photo.name}}</h3>
-        <p>{{photo.likes.data.length}} Likes | Like</p>
+        <p><span class="badge">{{photo.likes.data.length}}</span> Likes | <a onclick="likeImage({{photo.id}})" >Like</a></p>
 
+    </div>
     </div>
 
 </div>

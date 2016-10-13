@@ -25,7 +25,6 @@ app.controller('contentCtrl', function($scope, $http) {
 .controller('albumCtrl', function($scope, $http, $routeParams) {
     
     $scope.album = [];
-    console.log($routeParams.id);
 
     $(document).on('fblogin', function() {
 
@@ -40,11 +39,28 @@ app.controller('contentCtrl', function($scope, $http) {
                 }
             }
         }
+
+
+
             $scope.$apply(function() {
                 $scope.photos = data;
             });
         });
 
     });
+
+    $scope.likeImage = function(imageId) {
+
+        FB.api(
+            "/" + imageId + "/likes",
+            "POST",
+            function (response) {
+                // if (callback != undefined)
+                //     callback(response.data); 
+                console.log(response);
+            }
+        );
+
+    }
 
 });
