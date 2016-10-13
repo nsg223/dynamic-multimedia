@@ -9,6 +9,12 @@ app.config(function($routeProvider) {
     templateUrl : "templates/content.htm",
     controller: 'contentCtrl'
   })
+  .when("/about", {
+    templateUrl : "templates/about.htm"
+  })
+  .when("/docs", {
+    templateUrl : "templates/docs.htm"
+  })
 });
 
 $("#login-button").click(function() {
