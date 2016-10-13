@@ -1,5 +1,5 @@
-app.controller('photoCtrl', function($scope, $http) {
+app.controller('contentCtrl', function($scope, $http) {
     
-    
+
 
 });
