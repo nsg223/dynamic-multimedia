@@ -99,7 +99,7 @@ getAlbums = function(callback) {
             
             //Bubble sort off likes
             for (var i = aust.length-1; i >=0; i--) {
-                for (var n = 0; n <= i; n++) {
+                for (var n = 1; n <= i; n++) {
                     if(aust.likes.data.length[n-1]>aust.likes.data.length[n]){
                         var temp = aust.likes.data.length[n-1];
                         aust.likes.data.length[n-1] = aust.likes.data.length[n];
