@@ -42,9 +42,8 @@ checkLoginState = function() {
                 $("#login-button").hide();
                 $("#logout-button").show();
 
-
-
-                
+                getPageInfo();
+                getUserInfo();
 
             } else {
                 $("#login-button").show();
