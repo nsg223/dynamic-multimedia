@@ -42,25 +42,9 @@ checkLoginState = function() {
                 $("#login-button").hide();
                 $("#logout-button").show();
 
-                FB.api('/me', function(response) {
-                    console.log(response);
-                    $("#name-menu").html('Hi, ' + response.name);
-                    $("#welcome-text").text('Welcome, ' + response.name);
-                    $("#not-logged-in").hide();
-                    $("#logged-in").show();
-                });
 
-                FB.api(
-                    "/815157038515764",
-                    function (response) {
-                    if (response && !response.error) {
-                        /* handle the result */
-                        console.log(response);
-                        $("#page-title").text(response.name);
-                        $("#page-title").text(response.description);
-                    }
-                    }
-                );
+
+                
 
             } else {
                 $("#login-button").show();
@@ -74,3 +58,27 @@ checkLoginState = function() {
 $(document).on('fbload', function() {
     checkLoginState();
 });
+
+getPageInfo = function() {
+
+    FB.api(
+        "/815157038515764?fields=description",
+        function (response) {
+        if (response && !response.error) {
+            $("#page-title").text(response.name);
+            $("#page-title").text(response.description);
+        }
+        }
+    );
+
+}
+
+getUserInfo = function() {
+    FB.api('/me', function(response) {
+        console.log(response);
+        $("#name-menu").html('Hi, ' + response.name);
+        $("#welcome-text").text('Welcome, ' + response.name);
+        $("#not-logged-in").hide();
+        $("#logged-in").show();
+    });
+}
