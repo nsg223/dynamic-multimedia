@@ -61,7 +61,7 @@ $(document).on('fbload', function() {
 getPageInfo = function() {
 
     FB.api(
-        "/815157038515764?fields=description",
+        "/815157038515764?fields=description,name",
         function (response) {
         if (response && !response.error) {
             $("#page-title").text(response.name);
