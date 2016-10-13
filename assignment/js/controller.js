@@ -14,4 +14,15 @@ app.controller('contentCtrl', function($scope, $http) {
     });
 
 
+}).controller('albumCtrl', function($scope, $http) {
+    
+    $scope.album = [];
+
+    $(document).on('fblogin', function() {
+
+        console.log("Album Ctrl Triggered");
+
+    });
+
+
 });

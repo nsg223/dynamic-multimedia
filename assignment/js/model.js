@@ -15,6 +15,10 @@ app.config(function($routeProvider) {
   .when("/docs", {
     templateUrl : "templates/docs.htm"
   })
+  .when("/album/{id}", {
+      templateUrl : "templates/album.htm",
+      controller: "albumCtrl"
+  })
 });
 
 $("#login-button").click(function() {
