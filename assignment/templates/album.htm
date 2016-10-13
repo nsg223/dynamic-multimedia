@@ -4,10 +4,10 @@
     <hr>
 
     <div class="row">
-    <div class="col-md-3" ng-repeat="photo in photos">
+    <div class="col-md-6" ng-repeat="photo in photos">
 
         <a href="{{ photo.images[0].source }}" rel="lightbox" data-lightbox="images">
-            <img src="{{ photo.thumb }}">
+            <img src="{{ photo.thumb }}" class="center-block">
         </a>
 
         <h3>{{photo.name}}</h3>

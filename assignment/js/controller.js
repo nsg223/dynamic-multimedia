@@ -36,10 +36,8 @@ app.controller('contentCtrl', function($scope, $http) {
 
             data[i].hasLiked = false;
 
-            console.log(userId);
-
             for (var j = 0; j < data[i].likes.data.length; j++) {
-                if(1121314194570618 == data[i].likes.data[j].id)
+                if(userId == data[i].likes.data[j].id)
                     data[i].hasLiked = true;
             }
 
