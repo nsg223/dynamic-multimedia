@@ -29,21 +29,22 @@ $(document).on('fbload', function() {
 
     function checkLoginState() {
         FB.getLoginStatus(function(response) {
-            if (response.authResponse.status === "connected") {
-                $("#login-button").hide();
-                $("#logout-button").show();
-            } else {
-                $("#login-button").show();
-                $("#logout-button").hide();
-            }
+            console.log(response);
+            // if (response.authResponse.status === "connected") {
+            //     $("#login-button").hide();
+            //     $("#logout-button").show();
+            // } else {
+            //     $("#login-button").show();
+            //     $("#logout-button").hide();
+            // }
         });
     }
 
     checkLoginState();
 
-    FB.api('/me', function(response) {
-        console.log(response);
-    });
+    // FB.api('/me', function(response) {
+    //     console.log(response);
+    // });
     
 });
 
