@@ -87,6 +87,8 @@ getPhotos = function() {
     FB.api(
         "/815157038515764/albums?fields=location,name,id,count",
         function (response) {
+
+            console.log(response);
         
             for (var i = 0; i < response.data.length; i++) {
                 if(response.data.length.indexOf("Australia") == -1) {
