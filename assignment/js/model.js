@@ -97,6 +97,17 @@ getAlbums = function(callback) {
                 if(response.data[i].location != undefined && response.data[i].location.indexOf("Australia") > 0)
                     aust.push(response.data[i]);
             
+            //Bubble sort off likes
+            for (var i = 0; i < aust.length; i++) {
+                for (var n = 0; n <= i; n++) {
+                    if(aust[n-1]>aust[n]){
+                        var temp = aust[n-1];
+                        aust[n-1] = aust[n];
+                        aust[n] = temp;
+                    }
+                }
+            }
+
             if (callback != undefined)
                 callback(aust); 
 
