@@ -81,3 +81,22 @@ getUserInfo = function() {
         $("#logged-in").show();
     });
 }
+
+getPhotos = function() {
+
+    FB.api(
+        "/815157038515764/albums?fields=location,name,id,count",
+        function (response) {
+        
+            for (var i = 0; i < response.data.length; i++) {
+                if(response.data.length.indexOf("Australia") == -1) {
+                    array.splice(response.data.length, 1);
+                } 
+            }
+
+            console.log(response.data);
+
+        }
+    );
+    
+}
