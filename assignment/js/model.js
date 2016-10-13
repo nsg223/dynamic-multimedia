@@ -33,6 +33,11 @@ $(document).on('fbload', function() {
             if (response.status === "connected") {
                 $("#login-button").hide();
                 $("#logout-button").show();
+
+                FB.api('/me', function(response) {
+                    console.log(response);
+                });
+
             } else {
                 $("#login-button").show();
                 $("#logout-button").hide();
@@ -42,9 +47,7 @@ $(document).on('fbload', function() {
 
     checkLoginState();
 
-    // FB.api('/me', function(response) {
-    //     console.log(response);
-    // });
+
     
 });
 
