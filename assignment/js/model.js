@@ -30,9 +30,9 @@ $("#login-button").click(function() {
 
     FB.login(function(response) {
         checkLoginState();
-    });
+    }, { scope:'publish_actions' });
 
-}, { scope:'publish_actions' });
+}, );
 
 /**
  * Logs out a user
@@ -40,8 +40,8 @@ $("#login-button").click(function() {
 $("#logout-button").click(function() {
 
     FB.logout(function(response) {
-        alert('Logged Out');
         checkLoginState();
+        alert('Logged Out');
     });
 
 });
