@@ -69,6 +69,8 @@ checkLoginState = function() {
                 $("#logout-button").hide();
                 $("#not-logged-in").show();
                 $("#logged-in").hide();
+                $("#name-menu").html('');
+                $("#welcome-text").text('Login... ');
             }
         });
 }
