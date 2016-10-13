@@ -12,6 +12,10 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/lightbox.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
+    <script src="js/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,22 +25,43 @@
     <![endif]-->
   </head>
   <body ng-app="myApp">
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1606515049650275',
-          xfbml      : true,
-          version    : 'v2.6'
-        });
-      };
+    
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1606515049650275',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
 
-      (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
+    $(document).trigger('fbload');
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+        $(document).on('fbload', function() {
+
+          FB.getLoginStatus(function(response) {
+              
+              console.log(response);
+              statusChangeCallback(response);
+
+          });
+
+          //FB.login();
+
+        });
+
+
+
+      //});
+
     </script>
 
 
@@ -64,10 +89,7 @@
 </nav>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
+
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/model.js"></script>
