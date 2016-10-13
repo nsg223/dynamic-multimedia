@@ -8,6 +8,7 @@ app.controller('contentCtrl', function($scope, $http) {
             $scope.albums = data;
             $scope.apply(function() {
                 console.log("Photos Set in Scope!");
+                $scope.albums = data;
             });
         });
 
