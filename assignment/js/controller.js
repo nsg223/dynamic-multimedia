@@ -1,3 +1,6 @@
+/**
+ * Control main content view (Album previews/list)
+ */
 app.controller('contentCtrl', function($scope, $http) {
     
     $scope.albums = [];
@@ -14,7 +17,12 @@ app.controller('contentCtrl', function($scope, $http) {
     });
 
 
-}).controller('albumCtrl', function($scope, $http, $routeParams) {
+})
+
+/**
+ * Control Album Individual view
+ */
+.controller('albumCtrl', function($scope, $http, $routeParams) {
     
     $scope.album = [];
     console.log($routeParams.id);
@@ -23,13 +31,12 @@ app.controller('contentCtrl', function($scope, $http) {
 
         console.log("Album Ctrl Triggered");
 
-        getPhotos(function(data) {
+        getPhotos($routeParams.id, function(data) {
             $scope.$apply(function() {
                 $scope.photos = data;
             });
         });
 
     });
-
 
 });

@@ -21,6 +21,9 @@ app.config(function($routeProvider) {
   })
 });
 
+/**
+ * Prompts a user to login 
+ */
 $("#login-button").click(function() {
 
     FB.login(function(response) {
@@ -29,6 +32,9 @@ $("#login-button").click(function() {
 
 });
 
+/**
+ * Logs out a user
+ */
 $("#logout-button").click(function() {
 
     FB.logout(function(response) {
@@ -38,6 +44,10 @@ $("#logout-button").click(function() {
 
 });
 
+/**
+ * Checks if the user is logged in and displays
+ * links appropriately. 
+ */
 checkLoginState = function() {
         FB.getLoginStatus(function(response) {
             console.log(response);
@@ -58,10 +68,18 @@ checkLoginState = function() {
         });
 }
 
+/**
+ * Waits until the FB load trigger to check login state. 
+ */
 $(document).on('fbload', function() {
     checkLoginState();
 });
 
+/**
+ * Gets the pages information
+ * Display the name and description
+ * usage: getPageInfo();
+ */
 getPageInfo = function() {
 
     FB.api(
@@ -76,6 +94,11 @@ getPageInfo = function() {
 
 }
 
+/**
+ * Gets the users informations
+ * Display their name in the menu and welcome text
+ * usage: getUserInfo();
+ */
 getUserInfo = function() {
     FB.api('/me', function(response) {
         console.log(response);
@@ -86,6 +109,11 @@ getUserInfo = function() {
     });
 }
 
+/**
+ * Gets all of the albums from the page located in Australia
+ * Sorted by highest number of likes
+ * usage: getAlbums(function (data) { });
+ */
 getAlbums = function(callback) {
 
     FB.api(
@@ -116,10 +144,15 @@ getAlbums = function(callback) {
     
 }
 
-getPhotos = function(callback) {
+/**
+ * Gets all of the photos from the specified album
+ * Sorted by highest number of likes
+ * usage: getAlbums(function (data) { });
+ */
+getPhotos = function(albumID, callback) {
 
     FB.api(
-        "/816504545047680/photos?fields=picture,name,id,likes",
+        "/" + albumID + "/photos?fields=picture,name,id,likes",
         function (response) {
 
             if (callback != undefined)
