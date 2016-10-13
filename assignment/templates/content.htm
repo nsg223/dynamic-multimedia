@@ -1,22 +1,19 @@
 <div class="container">
 
-<h1 class="text-center"> Content </h1>
-<hr>
+    <h1 class="text-center"> Content </h1>
+    <hr>
 
-<h4 id="page-title">&nbsp; </h4>
+    <h4 id="page-title">&nbsp; </h4>
+    <p id="page-description">&nbsp; </p> 
 
-<p id="page-description">&nbsp; </p> 
+    {{albums}}
 
-{{albums}}
+    <div class="album" ng-repeat="album in albums">
 
-<div class="album" ng-repeat="album in albums">
+        <h3>{{album.name}}</h3>
+        <img src="{{ album.picture.data.url }}" class="img-responsive">
+        <p>{{album.count}} Photos | {{album.likes.length}} Likes</p>
 
-{{album.name}}
-
-<img src="{{album.picture}}" class="img-responsive">
-
-{{album.count}} Photos
-
-</div>
+    </div>
 
 </div>

@@ -7,7 +7,7 @@ $(document).on('fblogin', function() {
     getPhotos(function(data) {
         $scope.albums = data;
         console.log("Photos Set in Scope!");
-        console.log($scope);
+        console.log($scope.albums);
     });
 
 });
