@@ -22,7 +22,7 @@ $(document).on('fbload', function() {
     FB.getLoginStatus(function(response) {
         console.log(response);
 
-        if (authResponse.status == 'connected') {
+        if (response.authResponse.status == 'connected') {
 
             FB.api('/me', function(response) {
                 console.log(response);
