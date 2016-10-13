@@ -10,3 +10,17 @@ app.config(function($routeProvider) {
     controller: 'contentCtrl'
   })
 });
+
+$("#login-button").click(function() {
+
+    FB.login();
+
+});
+
+$(document).on('fbload', function() {
+
+    FB.getLoginStatus(function(response) {
+        console.log(response);
+    });
+
+});
