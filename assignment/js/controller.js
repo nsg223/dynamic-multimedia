@@ -14,9 +14,10 @@ app.controller('contentCtrl', function($scope, $http) {
     });
 
 
-}).controller('albumCtrl', function($scope, $http) {
+}).controller('albumCtrl', function($scope, $http, $routeParams) {
     
     $scope.album = [];
+    console.log($routeParams.id);
 
     $(document).on('fblogin', function() {
 
