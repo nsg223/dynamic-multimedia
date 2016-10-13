@@ -28,13 +28,7 @@ $("#logout-button").click(function() {
 
 });
 
-$(document).on('fbload', function() {
-
-    checkLoginState();
-
-});
-
-function checkLoginState() {
+checkLoginState = function() {
         FB.getLoginStatus(function(response) {
             console.log(response);
             if (response.status == "connected") {
@@ -51,3 +45,7 @@ function checkLoginState() {
             }
         });
 }
+
+$(document).on('fbload', function() {
+    checkLoginState();
+});
