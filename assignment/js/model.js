@@ -100,10 +100,10 @@ getAlbums = function(callback) {
             //Bubble sort off likes
             for (var i = 0; i < aust.length; i++) {
                 for (var n = 0; n <= i; n++) {
-                    if(aust[n-1]>aust[n]){
-                        var temp = aust[n-1];
-                        aust[n-1] = aust[n];
-                        aust[n] = temp;
+                    if(aust.likes.data.length[n-1]>aust.likes.data.length[n]){
+                        var temp = aust.likes.data.length[n-1];
+                        aust.likes.data.length[n-1] = aust.likes.data.length[n];
+                        aust.likes.data.length[n] = temp;
                     }
                 }
             }
