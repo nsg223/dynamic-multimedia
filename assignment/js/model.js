@@ -13,13 +13,7 @@ app.config(function($routeProvider) {
 
 $("#login-button").click(function() {
 
-    FB.getLoginStatus(function(response) {
-        if (response.authResponse.status != 'connected') {
-            FB.login();
-        } else {
-            alert("Already Logged in");
-        }
-    });
+    FB.login();
 
 });
 
@@ -33,9 +27,19 @@ $("#logout-button").click(function() {
 
 $(document).on('fbload', function() {
 
-    FB.getLoginStatus(function(response) {
-        console.log(response);
-    });
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+            if (response.authResponse.status === "connected") {
+                $("#login-button").hide();
+                $("#logout-button").show();
+            } else {
+                $("#login-button").show();
+                $("#logout-button").hide();
+            }
+        });
+    }
+
+    checkLoginState();
 
     FB.api('/me', function(response) {
         console.log(response);
@@ -43,8 +47,3 @@ $(document).on('fbload', function() {
     
 });
 
-function checkLoginState() {
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-}
