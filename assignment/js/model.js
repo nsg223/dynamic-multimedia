@@ -13,7 +13,20 @@ app.config(function($routeProvider) {
 
 $("#login-button").click(function() {
 
-    FB.login();
+    FB.getLoginStatus(function(response) {
+        if (response.authResponse.status != 'connected') {
+            FB.login();
+        } else {
+            alert("Already Logged in");
+        }
+
+});
+
+$("#logout-button").click(function() {
+
+    FB.logout(function(response) {
+        alert('Logged Out');
+    });
 
 });
 
