@@ -82,21 +82,17 @@ getUserInfo = function() {
     });
 }
 
-getPhotos = function() {
+getPhotos = function(callback) {
 
     FB.api(
         "/815157038515764/albums?fields=location,name,id,count",
         function (response) {
 
-            console.log(response);
-            aust = [];
-        
+            aust = [];        
             for (var i = 0; i < response.data.length; i++)
                 if(response.data[i].location != undefined && response.data[i].location.indexOf("Australia") > 0)
-                    aust.push(response.data[i].name);
-
-            console.log(aust);
-
+                    aust.push(response.data[i]);
+            callback(aust);
         }
     );
     
