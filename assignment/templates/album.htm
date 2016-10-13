@@ -1,12 +1,15 @@
 <div class="container">
 
-    <h1 id="page-title"> Album </h1>
+    <h1 id="album-title"> Album </h1>
     <hr>
 
 
     <div class="photo" ng-repeat="photo in photos">
 
         <img src="{{ photo.picture }}" class="img-responsive">
+
+        <h3>{{photo.name}}</h3>
+        <p>{{photo.likes.data.length}} Likes</p>
 
     </div>
 
