@@ -91,7 +91,7 @@ getPhotos = function() {
             console.log(response);
         
             for (var i = 0; i < response.data.length; i++) {
-                if(response.data[i].location.indexOf("Australia") == -1) {
+                if(response.data[i].location && response.data[i].location.indexOf("Australia") == -1) {
                     response.data.splice(response.data[i], 1);
                 } 
             }
