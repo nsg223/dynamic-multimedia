@@ -86,7 +86,7 @@ getUserInfo = function() {
     });
 }
 
-getPhotos = function(callback) {
+getAlbums = function(callback) {
 
     FB.api(
         "/815157038515764/albums?fields=location,name,id,count,likes,picture",

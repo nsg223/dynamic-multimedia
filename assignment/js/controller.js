@@ -4,7 +4,7 @@ app.controller('contentCtrl', function($scope, $http) {
 
     $(document).on('fblogin', function() {
     
-        getPhotos(function(data) {
+        getAlbums(function(data) {
             $scope.albums = data;
             $scope.$apply(function() {
                 $scope.albums = data;
