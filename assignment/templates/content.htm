@@ -10,7 +10,9 @@
 
     <div class="col-md-3" ng-repeat="album in albums">
 
-        <img src="{{ album.picture.data.url }}" class="img-responsive">
+        <a href="#/album/{{ album.id }}">
+            <img src="{{ album.picture.data.url }}" class="img-responsive">
+        </a>
         <h3>{{album.name}}</h3>
         <p>{{album.count}} Photos | {{album.likes.data.length}} Likes</p>
         <p>{{album.locaton }} </p>
