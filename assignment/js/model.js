@@ -38,6 +38,7 @@ checkLoginState = function() {
         FB.getLoginStatus(function(response) {
             console.log(response);
             if (response.status == "connected") {
+                $(document).trigger("fblogin");
                 $("#login-button").hide();
                 $("#logout-button").show();
 
