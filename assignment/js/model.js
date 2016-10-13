@@ -106,7 +106,6 @@ getUserInfo = function() {
         $("#welcome-text").text('Welcome, ' + response.name);
         $("#not-logged-in").hide();
         $("#logged-in").show();
-        userId = response.id;
     });
 }
 
