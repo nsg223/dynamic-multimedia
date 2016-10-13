@@ -13,7 +13,9 @@ app.config(function($routeProvider) {
 
 $("#login-button").click(function() {
 
-    FB.login();
+    FB.login(function(response) {
+        checkLoginState();
+    });
 
 });
 
@@ -21,6 +23,7 @@ $("#logout-button").click(function() {
 
     FB.logout(function(response) {
         alert('Logged Out');
+        checkLoginState();
     });
 
 });
@@ -30,7 +33,7 @@ $(document).on('fbload', function() {
     function checkLoginState() {
         FB.getLoginStatus(function(response) {
             console.log(response);
-            if (response.status === "connected") {
+            if (response.status == "connected") {
                 $("#login-button").hide();
                 $("#logout-button").show();
 
