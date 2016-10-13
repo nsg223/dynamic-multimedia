@@ -91,10 +91,10 @@ getPhotos = function() {
             console.log(response);
         
             for (var i = 0; i < response.data.length; i++) {
-                if(response.data[i].location != undefined && response.data[i].location.indexOf("Australia") == -1) {
-                    response.data.splice(response.data[i], 1);
-                } else {
+                if(response.data[i].location != undefined && response.data[i].location.indexOf("Australia") > 0) {
                     console.log(response.data[i].name);
+                } else {
+                    response.data.splice(response.data[i], 1);
                 }
             }
 
