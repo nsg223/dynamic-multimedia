@@ -89,16 +89,13 @@ getPhotos = function() {
         function (response) {
 
             console.log(response);
+            aust = [];
         
-            for (var i = 0; i < response.data.length; i++) {
-                if(response.data[i].location != undefined && response.data[i].location.indexOf("Australia") > 0) {
-                    console.log(response.data[i].name);
-                } else {
-                    response.data.splice(i, 1);
-                }
-            }
+            for (var i = 0; i < response.data.length; i++)
+                if(response.data[i].location != undefined && response.data[i].location.indexOf("Australia") > 0)
+                    aust.push(response.data[i].name);
 
-            console.log(response.data);
+            console.log(aust);
 
         }
     );
