@@ -19,6 +19,7 @@ $("#login-button").click(function() {
         } else {
             alert("Already Logged in");
         }
+    });
 
 });
 
@@ -34,16 +35,12 @@ $(document).on('fbload', function() {
 
     FB.getLoginStatus(function(response) {
         console.log(response);
-
-        if (response.authResponse.status == 'connected') {
-
-            FB.api('/me', function(response) {
-                console.log(response);
-            });
-
-        }
     });
 
+    FB.api('/me', function(response) {
+        console.log(response);
+    });
+    
 });
 
 function checkLoginState() {
