@@ -52,7 +52,7 @@ app.controller('contentCtrl', function($scope, $http) {
 
 
 
-            $scope.$apply(function() {
+        $scope.$apply(function() {
                 $scope.photos = data;
             });
         });
