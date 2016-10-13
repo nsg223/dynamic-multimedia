@@ -10,9 +10,10 @@
 
     <div class="album" ng-repeat="album in albums">
 
-        <h3>{{album.name}}</h3>
         <img src="{{ album.picture.data.url }}" class="img-responsive">
-        <p>{{album.count}} Photos | {{album.likes.length}} Likes</p>
+        <h3>{{album.name}}</h3>
+        <p>{{album.count}} Photos | {{album.likes.data.length}} Likes</p>
+        <p>{{album.locaton }} </p>
 
     </div>
 

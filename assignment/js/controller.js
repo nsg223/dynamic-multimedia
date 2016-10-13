@@ -1,8 +1,8 @@
 app.controller('contentCtrl', function($scope, $http) {
     
-$(document).on('fblogin', function() {
+$scope.albums = [];
 
-    $scope.albums = [];
+$(document).on('fblogin', function() {
  
     getPhotos(function(data) {
         $scope.albums = data;
