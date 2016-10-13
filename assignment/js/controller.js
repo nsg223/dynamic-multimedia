@@ -31,6 +31,14 @@ app.controller('contentCtrl', function($scope, $http) {
 
         console.log("Album Ctrl Triggered");
 
+        for (var i = 0; i < data.length; i++) {
+            for (var n = 0; n < data[i].images.length; n++) {
+                if (data[i].images[n].height == 320) {
+                    data[i].thumb = data[i].images[n].source; 
+                }
+            }
+        }
+
         getPhotos($routeParams.id, function(data) {
             $scope.$apply(function() {
                 $scope.photos = data;
