@@ -5,7 +5,7 @@ app.controller('contentCtrl', function($scope, $http) {
     $(document).on('fblogin', function() {
     
         getAlbums(function(data) {
-            $scope.albums = data;
+            // $scope.albums = data;
             $scope.$apply(function() {
                 $scope.albums = data;
             });
@@ -22,6 +22,12 @@ app.controller('contentCtrl', function($scope, $http) {
     $(document).on('fblogin', function() {
 
         console.log("Album Ctrl Triggered");
+
+        getPhotos(function(data) {
+            $scope.$apply(function() {
+                $scope.photos = data;
+            });
+        });
 
     });
 

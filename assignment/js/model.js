@@ -104,3 +104,17 @@ getAlbums = function(callback) {
     );
     
 }
+
+getPhotos = function(callback) {
+
+    FB.api(
+        "/816504545047680/photos?fields=picture,name,id,likes",
+        function (response) {
+
+            if (callback != undefined)
+                callback(response.data); 
+
+        }
+    );
+    
+}
