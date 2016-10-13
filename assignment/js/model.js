@@ -1,4 +1,5 @@
 app = angular.module('myApp', ['ngRoute']);
+var userId;
 
 app.config(function($routeProvider) {
   $routeProvider
@@ -106,6 +107,7 @@ getUserInfo = function() {
         $("#welcome-text").text('Welcome, ' + response.name);
         $("#not-logged-in").hide();
         $("#logged-in").show();
+        userId = response.id;
     });
 }
 

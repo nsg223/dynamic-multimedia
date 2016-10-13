@@ -33,6 +33,16 @@ app.controller('contentCtrl', function($scope, $http) {
         getPhotos($routeParams.id, function(data) {
 
         for (var i = 0; i < data.length; i++) {
+
+            data[i].hasLiked = false;
+
+            for (var j = 0; j < data[i].likes; j++) {
+
+                if(UserId == data[i].likes[j].id)
+                    data[i].hasLiked = true;
+
+            }
+
             for (var n = 0; n < data[i].images.length; n++) {
                 if (data[i].images[n].height == 320) {
                     data[i].thumb = data[i].images[n].source; 
