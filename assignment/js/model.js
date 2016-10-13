@@ -50,6 +50,17 @@ checkLoginState = function() {
                     $("#logged-in").show();
                 });
 
+                FB.api(
+                    "/815157038515764",
+                    function (response) {
+                    console.log(response);
+                    if (response && !response.error) {
+                        /* handle the result */
+                        console.log(response);
+                    }
+                    }
+                );
+
             } else {
                 $("#login-button").show();
                 $("#logout-button").hide();
