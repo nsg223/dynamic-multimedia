@@ -6,14 +6,16 @@
     <h4 id="page-title">&nbsp; </h4>
     <p id="page-description">&nbsp; </p> 
 
-    {{albums}}
+    <div class="row">
 
-    <div class="album" ng-repeat="album in albums">
+    <div class="col-md-3" ng-repeat="album in albums">
 
         <img src="{{ album.picture.data.url }}" class="img-responsive">
         <h3>{{album.name}}</h3>
         <p>{{album.count}} Photos | {{album.likes.data.length}} Likes</p>
         <p>{{album.locaton }} </p>
+
+    </div>
 
     </div>
 
