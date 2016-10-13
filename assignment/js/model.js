@@ -85,14 +85,17 @@ getUserInfo = function() {
 getPhotos = function(callback) {
 
     FB.api(
-        "/815157038515764/albums?fields=location,name,id,count",
+        "/815157038515764/albums?fields=location,name,id,count,likes,picture",
         function (response) {
 
             aust = [];        
             for (var i = 0; i < response.data.length; i++)
                 if(response.data[i].location != undefined && response.data[i].location.indexOf("Australia") > 0)
                     aust.push(response.data[i]);
-            callback(aust);
+            
+            if (callback != undefined)
+                callback(aust); 
+
         }
     );
     
