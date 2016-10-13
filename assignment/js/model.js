@@ -1,5 +1,4 @@
 app = angular.module('myApp', ['ngRoute']);
-var userId;
 
 app.config(function($routeProvider) {
   $routeProvider
