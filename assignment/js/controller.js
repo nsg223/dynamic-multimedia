@@ -4,7 +4,7 @@
 app.controller('contentCtrl', function($scope) {
     
     if (userId == undefined)
-        window.location = "#/welcome";
+        window.location = "#/";
 
     $scope.albums = [];
 
@@ -28,7 +28,7 @@ app.controller('contentCtrl', function($scope) {
 .controller('albumCtrl', function($scope, $routeParams) {
     
     if (userId == undefined)
-        window.location = "#/welcome";
+        window.location = "#/";
 
     $scope.album = [];
 
