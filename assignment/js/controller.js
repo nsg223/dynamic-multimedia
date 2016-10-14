@@ -31,9 +31,7 @@ app.controller('contentCtrl', function($scope, $http) {
     
     $scope.album = [];
 
-    $(document).on('fblogin', function() {
-
-        console.log("Album Ctrl Triggered");
+    // $(document).on('fblogin', function() {
 
         getPhotos($routeParams.id, function(data) {
 
@@ -62,7 +60,7 @@ app.controller('contentCtrl', function($scope, $http) {
             });
         });
 
-    });
+    // });
 
     $scope.likeImage = function(imageId) {
 
