@@ -1,11 +1,9 @@
 /**
  * Control main content view (Album previews/list)
  */
-app.controller('contentCtrl', function($scope, $http) {
+app.controller('contentCtrl', function($scope) {
     
     $scope.albums = [];
-
-    // $(document).on('fblogin', function() {
 
         getPageInfo(function(data) {
             $scope.$apply(function() {
@@ -19,19 +17,17 @@ app.controller('contentCtrl', function($scope, $http) {
             });
         });
 
-    // });
-
-
 })
 
 /**
- * Control Album Individual view
+ * Controller for  Album Individual view
  */
-.controller('albumCtrl', function($scope, $http, $routeParams) {
+.controller('albumCtrl', function($scope, $routeParams) {
     
-    $scope.album = [];
+    if (userId == undefined)
+        window.location = "/#/welcome";
 
-    // $(document).on('fblogin', function() {
+    $scope.album = [];
 
         getPhotos($routeParams.id, function(data) {
 
@@ -60,7 +56,6 @@ app.controller('contentCtrl', function($scope, $http) {
             });
         });
 
-    // });
 
     $scope.likeImage = function(imageId) {
 
