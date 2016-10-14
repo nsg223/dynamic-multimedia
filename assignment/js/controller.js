@@ -30,8 +30,6 @@ app.controller('contentCtrl', function($scope) {
     if (userId == undefined)
         window.location = "#/";
 
-    $scope.album = [];
-
         getPhotos($routeParams.id, function(data) {
 
 

@@ -63,7 +63,7 @@ checkLoginState = function() {
                 getUserInfo(function() {
                     $(document).trigger("fblogin");
                 });
-                
+                window.location = "#/content";                
 
             } else {
                 $("#login-button").show();
@@ -163,7 +163,7 @@ getAlbums = function(callback) {
 getPhotos = function(albumID, callback) {
 
     FB.api(
-        "/" + albumID + "/photos?fields=picture,name,id,likes,images",
+        "/" + albumID + "/photos?fields=picture,name,id,likes,images,album",
         function (response) {
 
             if (callback != undefined)
