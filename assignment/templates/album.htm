@@ -4,24 +4,30 @@
     <hr>
 
     <div class="row">
-    <div class="col-md-6 text-center" ng-repeat="photo in photos">
+    <div class="text-center" ng-repeat="photo in photos">
 
-        <a href="{{ photo.images[0].source }}" rel="lightbox" data-lightbox="images">
-            <img src="{{ photo.thumb }}" class="center-block">
-        </a>
 
-        <h3>{{photo.name}}</h3>
-        <p>
-            <span class="badge">{{photo.likeCount}}</span>
-            <a ng-click="likeImage(photo.id); photo.hasLiked = true; photo.likeCount = photo.likeCount + 1" 
-               ng-if="!photo.hasLiked" >
-               Like
+        <div class="clearfix" ng-if="$index % 3 == 0"></div>
+        <div class="col-md-4">
+
+            <a href="{{ photo.images[0].source }}" rel="lightbox" data-lightbox="images">
+                <img src="{{ photo.thumb }}" class="center-block">
             </a>
-            <a ng-click="unLikeImage(photo.id); photo.hasLiked = false; photo.likeCount = photo.likeCount - 1" 
-               ng-if="photo.hasLiked" >
-               Unlike
-            </a>
-        </p>
+
+            <h3>{{photo.name}}</h3>
+            <p>
+                <span class="badge">{{photo.likeCount}}</span>
+                <a ng-click="likeImage(photo.id); photo.hasLiked = true; photo.likeCount = photo.likeCount + 1" 
+                ng-if="!photo.hasLiked" >
+                Like
+                </a>
+                <a ng-click="unLikeImage(photo.id); photo.hasLiked = false; photo.likeCount = photo.likeCount - 1" 
+                ng-if="photo.hasLiked" >
+                Unlike
+                </a>
+            </p>
+        </div>
+
 
     </div>
     </div>
