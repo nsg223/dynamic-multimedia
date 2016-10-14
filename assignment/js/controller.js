@@ -5,7 +5,7 @@ app.controller('contentCtrl', function($scope, $http) {
     
     $scope.albums = [];
 
-    $(document).on('fblogin', function() {
+    // $(document).on('fblogin', function() {
     
         getAlbums(function(data) {
             // $scope.albums = data;
@@ -14,7 +14,7 @@ app.controller('contentCtrl', function($scope, $http) {
             });
         });
 
-    });
+    // });
 
 
 })
