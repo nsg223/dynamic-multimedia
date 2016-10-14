@@ -32,9 +32,11 @@ app.controller('contentCtrl', function($scope, $http) {
 
         getPhotos($routeParams.id, function(data) {
 
+
         for (var i = 0; i < data.length; i++) {
 
             data[i].hasLiked = false;
+            data[i].likeCount = data[i].likes.data.length;
 
             for (var j = 0; j < data[i].likes.data.length; j++) {
                 if(userId == data[i].likes.data[j].id)
