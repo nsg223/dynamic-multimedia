@@ -7,11 +7,11 @@
     <div class="text-center" ng-repeat="photo in photos">
 
 
-        <div class="clearfix" ng-if="$index % 3 == 0"></div>
-        <div class="col-md-4">
+        <div class="clearfix" ng-if="$index % 2 == 0"></div>
+        <div class="col-md-6">
 
             <a href="{{ photo.images[0].source }}" rel="lightbox" data-lightbox="images">
-                <img src="{{ photo.thumb }}" class="center-block">
+                <img src="{{ photo.thumb }}" class="center-block img-responsive" alt="{{photo.name}}">
             </a>
 
             <h3>{{photo.name}}</h3>
