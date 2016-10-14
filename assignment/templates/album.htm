@@ -13,11 +13,11 @@
         <h3>{{photo.name}}</h3>
         <p>
             <span class="badge">{{photo.likeCount}}</span>
-            <a ng-click="likeImage(photo.id); photo.hasLiked = true; photo.likeCount = likeCount + 1" 
+            <a ng-click="likeImage(photo.id); photo.hasLiked = true; photo.likeCount = photo.likeCount + 1" 
                ng-if="!photo.hasLiked" >
                Like
             </a>
-            <a ng-click="unLikeImage(photo.id); photo.hasLiked = false; likeCount = likeCount - 1" 
+            <a ng-click="unLikeImage(photo.id); photo.hasLiked = false; photo.likeCount = photo.likeCount - 1" 
                ng-if="photo.hasLiked" >
                Unlike
             </a>
