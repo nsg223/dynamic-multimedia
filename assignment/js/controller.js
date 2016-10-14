@@ -6,9 +6,14 @@ app.controller('contentCtrl', function($scope, $http) {
     $scope.albums = [];
 
     // $(document).on('fblogin', function() {
+
+        getPageInfo(function(data) {
+            $scope.$apply(function() {
+                $scope.page = data;
+            });
+        });
     
         getAlbums(function(data) {
-            // $scope.albums = data;
             $scope.$apply(function() {
                 $scope.albums = data;
             });

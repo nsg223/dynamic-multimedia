@@ -87,14 +87,15 @@ $(document).on('fbload', function() {
  * Display the name and description
  * usage: getPageInfo();
  */
-getPageInfo = function() {
+getPageInfo = function(callback()) {
 
     FB.api(
         "/815157038515764?fields=description,name",
         function (response) {
         if (response && !response.error) {
-            $("#page-title").text(response.name);
-            $("#page-description").text(response.description);
+            // $("#page-title").text(response.name);
+            // $("#page-description").text(response.description);
+            callback(response);
         }
         }
     );
