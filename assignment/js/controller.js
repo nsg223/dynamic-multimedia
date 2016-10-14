@@ -63,8 +63,18 @@ app.controller('contentCtrl', function($scope, $http) {
             "/" + imageId + "/likes",
             "POST",
             function (response) {
-                // if (callback != undefined)
-                //     callback(response.data); 
+                console.log(response);
+            }
+        );
+
+    }
+
+    $scope.unLikeImage = function(imageId) {
+
+        FB.api(
+            "/" + imageId + "/likes",
+            "DELETE",
+            function (response) {
                 console.log(response);
             }
         );

@@ -14,7 +14,7 @@
         <p>
             <span class="badge">{{photo.likes.data.length}}</span>
             <a ng-click="likeImage(photo.id)" ng-if="!photo.hasLiked" >Like</a>
-            <a ng-click="likeImage(photo.id)" ng-if="photo.hasLiked" >Unlike</a>
+            <a ng-click="unLikeImage(photo.id)" ng-if="photo.hasLiked" >Unlike</a>
         </p>
 
     </div>
