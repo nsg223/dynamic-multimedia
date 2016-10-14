@@ -43,6 +43,7 @@ $("#logout-button").click(function() {
         checkLoginState();
         alert('Logged Out');
     });
+    userId = undefined;
 
 });
 
