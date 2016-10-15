@@ -35,7 +35,7 @@ app.controller('contentCtrl', function($scope, $http) {
 /**
  * Controller for  Album Individual view
  */
-.controller('albumCtrl', function($scope, $routeParams) {
+.controller('albumCtrl', function($scope, $routeParams, $http) {
     
     if (userId == undefined)
         window.location = "#/";
