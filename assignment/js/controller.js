@@ -20,6 +20,13 @@ app.controller('contentCtrl', function($scope) {
             });
         });
 
+        getFeed(function(data) {
+            console.log(data);
+            $scope.$apply(function() {
+                    $scope.feeds = data;
+            });
+        });
+
 })
 
 /**
@@ -54,16 +61,6 @@ app.controller('contentCtrl', function($scope) {
             });
 
         });
-
-
-    getFeed(function(data) {
-
-        console.log(data);
-        $scope.$apply(function() {
-                $scope.feeds = data;
-        });
-    });
-
 
     $scope.likeImage = function(imageId) {
 
