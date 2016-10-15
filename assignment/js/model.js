@@ -62,8 +62,8 @@ checkLoginState = function() {
                 getPageInfo();
                 getUserInfo(function() {
                     $(document).trigger("fblogin");
+                    window.location = "#/content";             
                 });
-                window.location = "#/content";                
 
             } else {
                 $("#login-button").show();
