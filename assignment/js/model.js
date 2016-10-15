@@ -64,6 +64,8 @@ checkLoginState = function() {
                 getUserInfo(function() {
                     $(document).trigger("fblogin");
                     window.location = "#/content";             
+                    $("#not-logged-in").hide();
+                    $("#logged-in").show();
                 });
 
             } else {
