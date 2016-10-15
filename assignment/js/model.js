@@ -180,8 +180,15 @@ getFeed = function(callback) {
         "815157038515764/feed?fields=message,id,likes,story,created_time",
         function (response) {
 
+            feeds = [];
+
+            for (var i = 0; i < reponse.data.length; i++) {
+                if (response.data[i].story == undefined)
+                    feeds.push(response.data[i]);
+            }
+
             if (callback != undefined)
-                callback(response.data); 
+                callback(feeds); 
 
         }
     );
