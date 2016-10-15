@@ -184,7 +184,7 @@ getFeed = function(callback) {
 
             for (var i = 0; i < response.data.length; i++) {
                 if (response.data[i].story == undefined) {
-
+                    console.log(response.data[i]);
                     for (var n = 0; n < response.data[i].likes.length; n++) {
                         if(response.data[i].likes[n].id == 815157038515764) {
                             feeds.push(response.data[i]);
