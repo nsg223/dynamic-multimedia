@@ -28,7 +28,13 @@
         </div>
         <div class="media-body">
             <h4 class="media-heading">{{ feed.message }}</h4>
-            {{ feed.likes.data.length }} Likes <span class="text-muted">Posted on {{ feed.created_time | date:'medium' }}</span>
+            {{ feed.likes.data.length }} 
+            <ng-pluralize count="feed.likes.data.length"
+                 when="{'0': 'No likes.',
+                     '1': '1 like',
+                     'other': '{} likes.'}">
+            </ng-pluralize> 
+            <span class="text-muted">Posted on {{ feed.created_time | date:'medium' }}</span>
         </div>
         </div>
     </div>
