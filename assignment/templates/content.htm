@@ -23,9 +23,9 @@
         <h2>Feed</h2>
 
         <div class="media" ng-repeat="feed in feeds">
-        <div class="media-left">
+        <!--<div class="media-left">
             <img class="media-object" src="https://placehold.it/50x50" alt="comment">
-        </div>
+        </div>-->
         <div class="media-body">
             <h4 class="media-heading">{{ feed.message }}</h4>
             <ng-pluralize count="feed.likes.data.length"
