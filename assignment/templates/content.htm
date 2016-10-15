@@ -23,7 +23,7 @@
         <h2>Feed</h2>
         <div class="" ng-repeat="feed in feeds">
             <p>{{ feed.message }} </p>
-            <p> {{ feed.created_time }} </p>
+            <p> {{ feed.created_time | date:'medium' }} </p>
         </div>
     </div>
 
