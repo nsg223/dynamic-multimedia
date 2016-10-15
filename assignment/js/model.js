@@ -206,3 +206,17 @@ getFeed = function(callback) {
     
 
 }
+
+getAlbumInfo = function(albumID, callback) {
+
+    FB.api(
+        "/" + albumID + "/?fields=name,location",
+        function (response) {
+
+            if (callback != undefined)
+                callback(response.data); 
+
+        }
+    );
+    
+}
