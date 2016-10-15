@@ -173,3 +173,18 @@ getPhotos = function(albumID, callback) {
     );
     
 }
+
+getFeed = function(callback) {
+
+    FB.api(
+        "815157038515764/feed?fields=message,id,likes,story,created_time",
+        function (response) {
+
+            if (callback != undefined)
+                callback(response.data); 
+
+        }
+    );
+    
+
+}

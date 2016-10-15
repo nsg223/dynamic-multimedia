@@ -58,6 +58,14 @@ app.controller('contentCtrl', function($scope) {
         });
 
 
+        getFeed(function(data) {
+
+            $scope.$apply(function() {
+                    $scope.feeds = data;
+            });
+        });
+
+
     $scope.likeImage = function(imageId) {
 
         FB.api(
