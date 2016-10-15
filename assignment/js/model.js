@@ -59,8 +59,7 @@ checkLoginState = function() {
                 
                 $("#login-button").hide();
                 $("#logout-button").show();
-                $("#not-logged-in").hide();
-                $("#logged-in").show();
+            
 
                 getPageInfo();
                 getUserInfo(function() {
@@ -71,10 +70,6 @@ checkLoginState = function() {
             } else {
                 $("#login-button").show();
                 $("#logout-button").hide();
-                $("#not-logged-in").show();
-                $("#logged-in").hide();
-                $("#name-menu").html('');
-                $("#welcome-text").text('Login... ');
             }
         });
 }
