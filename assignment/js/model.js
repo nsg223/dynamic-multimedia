@@ -215,7 +215,7 @@ getAlbumInfo = function(albumID, callback) {
 
             console.log(response);
             if (callback != undefined)
-                callback(response.data); 
+                callback(response); 
 
         }
     );
