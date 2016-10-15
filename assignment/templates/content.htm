@@ -1,42 +1,30 @@
 <div class="container">
 
-    <h1 id="page-title"> {{ page.name }} </h1>
-    <hr>
-    <p id="page-description"> {{ page.description }} </p> 
-
-    <hr>
-
     <div class="row">
-
-    <h2> Albums</h2>
-
-    <div class="col-md-3" ng-repeat="album in albums">
-
-        <a href="#/album/{{ album.id }}">
-            <img src="{{ album.picture.data.url }}" class="img-responsive">
-        </a>
-        <h3>{{album.name}}</h3>
-        <p>{{album.count}} Photos | {{album.likes.data.length}} Likes</p>
-        <p>{{album.locaton }} </p>
-
-    </div>
-
+        <h1> {{ page.name }} </h1>
+        <hr>
+        <p> {{ page.description }} </p> 
+        <hr>
     </div>
 
     <div class="row">
-
-
-    <h2>Feed</h2>
-
-    <div class="" ng-repeat="feed in feeds">
-
-        <p>{{ feed.message }} </p>
-
-        <p> {{ feed.created_time }} </p>
-
+        <h2> Albums</h2>
+        <div class="col-md-3" ng-repeat="album in albums">
+            <a href="#/album/{{ album.id }}">
+                <img src="{{ album.picture.data.url }}" class="img-responsive">
+            </a>
+            <h3>{{album.name}}</h3>
+            <p>{{album.count}} Photos | {{album.likes.data.length}} Likes</p>
+            <p>{{album.locaton }} </p>
+        </div>
     </div>
 
+    <div class="row">
+        <h2>Feed</h2>
+        <div class="" ng-repeat="feed in feeds">
+            <p>{{ feed.message }} </p>
+            <p> {{ feed.created_time }} </p>
+        </div>
     </div>
-
 
 </div>
