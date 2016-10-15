@@ -213,6 +213,7 @@ getAlbumInfo = function(albumID, callback) {
         albumID + "/?fields=name,location",
         function (response) {
 
+            console.log(response);
             if (callback != undefined)
                 callback(response.data); 
 
