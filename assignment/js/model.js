@@ -59,12 +59,12 @@ checkLoginState = function() {
                 
                 $("#login-button").hide();
                 $("#logout-button").show();
+                $("#not-logged-in").hide();
+                $("#logged-in").show();
 
                 getPageInfo();
                 getUserInfo(function() {
                     $(document).trigger("fblogin");
-                    $("#not-logged-in").hide();
-                    $("#logged-in").show();
                     window.location = "#/content";             
                 });
 
