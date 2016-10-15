@@ -1,7 +1,7 @@
 /**
  * Control main content view (Album previews/list)
  */
-app.controller('contentCtrl', function($scope) {
+app.controller('contentCtrl', function($scope, $http) {
     
     if (userId == undefined)
         window.location = "#/";
@@ -42,7 +42,7 @@ app.controller('contentCtrl', function($scope) {
 /**
  * Controller for  Album Individual view
  */
-.controller('albumCtrl', function($scope, $routeParams, $https) {
+.controller('albumCtrl', function($scope, $routeParams) {
     
     if (userId == undefined)
         window.location = "#/";
