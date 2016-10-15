@@ -32,38 +32,37 @@ app.controller('contentCtrl', function($scope) {
 
         getPhotos($routeParams.id, function(data) {
 
+            for (var i = 0; i < data.length; i++) {
 
-        for (var i = 0; i < data.length; i++) {
+                data[i].hasLiked = false;
+                data[i].likeCount = data[i].likes.data.length;
 
-            data[i].hasLiked = false;
-            data[i].likeCount = data[i].likes.data.length;
+                for (var j = 0; j < data[i].likes.data.length; j++) {
+                    if(userId == data[i].likes.data[j].id)
+                        data[i].hasLiked = true;
+                }
 
-            for (var j = 0; j < data[i].likes.data.length; j++) {
-                if(userId == data[i].likes.data[j].id)
-                    data[i].hasLiked = true;
-            }
-
-            for (var n = 0; n < data[i].images.length; n++) {
-                if (data[i].images[n].height == 320) {
-                    data[i].thumb = data[i].images[n].source; 
+                for (var n = 0; n < data[i].images.length; n++) {
+                    if (data[i].images[n].height == 320) {
+                        data[i].thumb = data[i].images[n].source; 
+                    }
                 }
             }
-        }
-
-
-
-        $scope.$apply(function() {
-                $scope.photos = data;
-            });
-        });
-
-
-        getFeed(function(data) {
 
             $scope.$apply(function() {
-                    $scope.feeds = data;
+                $scope.photos = data;
             });
+
         });
+
+
+    getFeed(function(data) {
+
+        console.log(data);
+        $scope.$apply(function() {
+                $scope.feeds = data;
+        });
+    });
 
 
     $scope.likeImage = function(imageId) {
