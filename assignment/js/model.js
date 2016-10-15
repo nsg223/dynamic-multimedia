@@ -183,6 +183,7 @@ getFeed = function(callback) {
             feeds = [];
 
             for (var i = 0; i < response.data.length; i++) {
+                console.log(response.data[i]);
                 if (response.data[i].story == undefined) {
                     for (var n = 0; n < response.data[i].likes.data.length; n++) {
                         if(response.data[i].likes.data[n].id == 815157038515764) {
