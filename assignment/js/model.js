@@ -70,6 +70,7 @@ checkLoginState = function() {
             } else {
                 $("#login-button").show();
                 $("#logout-button").hide();
+                $("#name-menu").html('');
             }
         });
 }
