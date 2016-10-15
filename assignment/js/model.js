@@ -182,9 +182,19 @@ getFeed = function(callback) {
 
             feeds = [];
 
-            for (var i = 0; i < reponse.data.length; i++) {
-                if (response.data[i].story == undefined)
-                    feeds.push(response.data[i]);
+            for (var i = 0; i < response.data.length; i++) {
+                if (response.data[i].story == undefined) {
+
+                    for (var n = 0; n < response.data[i].likes.length; n++) {
+                        if(response.data[i].likes[n].id == 815157038515764) {
+                            feeds.push(response.data[i]);
+                            break;
+                        }
+                    }
+                    
+                }
+
+                
             }
 
             if (callback != undefined)
