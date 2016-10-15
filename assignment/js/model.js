@@ -44,6 +44,7 @@ $("#logout-button").click(function() {
         alert('Logged Out');
     });
     userId = undefined;
+    window.location = "#/";
 
 });
 
