@@ -41,10 +41,10 @@ $("#logout-button").click(function() {
 
     FB.logout(function(response) {
         checkLoginState();
-        alert('Logged Out');
+        // alert('Logged Out');
+        userId = undefined;
+        window.location = "#/";
     });
-    userId = undefined;
-    window.location = "#/";
 
 });
 
