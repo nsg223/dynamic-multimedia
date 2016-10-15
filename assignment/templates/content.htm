@@ -28,7 +28,6 @@
         </div>
         <div class="media-body">
             <h4 class="media-heading">{{ feed.message }}</h4>
-            {{ feed.likes.data.length }} 
             <ng-pluralize count="feed.likes.data.length"
                  when="{'0': 'No likes.',
                      '1': '1 like',
